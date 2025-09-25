@@ -13,4 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Вывести сообщение'
-        run: echo "🎉 Workflow запущен! Сообщение: ${{ github.event.inputs.message }}"
+        env:
+          MESSAGE: ${{ github.event.inputs.message }}
+        run: echo "🎉 Workflow запущен! Сообщение:$MESSAGE"
